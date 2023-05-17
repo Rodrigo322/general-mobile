@@ -5,5 +5,5 @@ import 'app_module.dart';
 import 'app_widget.dart';
 
 void main() {
-  return runApp(ModularApp(module: AppModule(), child: AppWidget()));
+  return runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }

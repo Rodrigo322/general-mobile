@@ -15,10 +15,14 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Padding(
-        padding: const EdgeInsets.only(top: 300, left: 25, right: 25),
+        padding: const EdgeInsets.only(top: 50, left: 25, right: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Image(image: AssetImage('assets/images/logo.png')),
+            const SizedBox(
+              height: 100,
+            ),
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xFF262629),

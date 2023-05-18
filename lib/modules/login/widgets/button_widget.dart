@@ -11,10 +11,16 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 400,
-      height: 40,
+      height: 50,
       child: TextButton(
-        style: const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll<Color>(AppColors.secondary),
+        style: ButtonStyle(
+          backgroundColor:
+              const MaterialStatePropertyAll<Color>(AppColors.secondary),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10), // Define o raio da borda
+            ),
+          ),
         ),
         onPressed: onPressed,
         child: Text(

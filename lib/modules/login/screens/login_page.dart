@@ -10,7 +10,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +58,22 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 40,
             ),
-            const ButtonWidget(),
+            ButtonWidget(
+              text: "Entrar",
+              onPressed: () {},
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Center(
+              child: TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Esqueceu sua senha?',
+                  style: TextStyle(color: AppColors.sutTitle),
+                ),
+              ),
+            ),
           ],
         ),
       ),

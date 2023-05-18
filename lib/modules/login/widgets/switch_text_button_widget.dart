@@ -17,7 +17,7 @@ class SwitchTextButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: isActive
               ? const MaterialStatePropertyAll<Color>(AppColors.primary)
-              : null,
+              : const MaterialStatePropertyAll<Color>(Colors.transparent),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15), // Define o raio da borda

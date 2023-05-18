@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_mobile/modules/login/widgets/button_widget.dart';
+import 'package:general_mobile/modules/login/widgets/switch_text_button_widget.dart';
 import 'package:general_mobile/modules/login/widgets/text_field_widget.dart';
 import 'package:general_mobile/shared/utilities/app_colors.dart';
 
@@ -35,53 +36,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      height: 60,
-                      child: TextButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              const MaterialStatePropertyAll<Color>(
-                                  AppColors.primary),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  15), // Define o raio da borda
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          "Entrar",
-                          style: const TextStyle(color: AppColors.title),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 60,
-                      child: TextButton(
-                        style: ButtonStyle(
-                          // backgroundColor:
-                          //     const MaterialStatePropertyAll<Color>(
-                          //         AppColors.primary),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  15), // Define o raio da borda
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          "Cadastro",
-                          style: const TextStyle(color: AppColors.title),
-                        ),
-                      ),
-                    ),
+                  children: const [
+                    SwitchTextButton(text: "Entrar", isActive: false),
+                    SwitchTextButton(text: "Registrar", isActive: true),
                   ],
                 ),
               ),

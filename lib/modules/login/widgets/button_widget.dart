@@ -11,14 +11,14 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 400,
-      height: 50,
+      height: 60,
       child: TextButton(
         style: ButtonStyle(
           backgroundColor:
               const MaterialStatePropertyAll<Color>(AppColors.secondary),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10), // Define o raio da borda
+              borderRadius: BorderRadius.circular(5), // Define o raio da borda
             ),
           ),
         ),

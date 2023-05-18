@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_mobile/modules/login/widgets/button_widget.dart';
 import 'package:general_mobile/shared/utilities/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,8 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _ligado = false;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,39 +20,46 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Switch(
-              value: _ligado,
-              onChanged: (valor) {
-                setState(
-                  () {
-                    _ligado = valor;
-                  },
-                );
-              },
-            ),
-            const TextField(
-              style: TextStyle(
-                color: AppColors.title,
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFF262629),
+                borderRadius: BorderRadius.circular(10),
               ),
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'E-mail',
-                  hintText: 'email@email.com',
-                  labelStyle: TextStyle(color: AppColors.title)),
+              child: const TextField(
+                style: TextStyle(
+                  color: AppColors.title,
+                ),
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'E-mail',
+                    hintStyle: TextStyle(color: AppColors.title),
+                    labelStyle: TextStyle(color: AppColors.title)),
+              ),
             ),
             const SizedBox(
-              height: 45,
+              height: 20,
             ),
-            const TextField(
-              style: TextStyle(
-                color: AppColors.title,
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFF262629),
+                borderRadius: BorderRadius.circular(10),
               ),
-              decoration: InputDecoration(
+              child: const TextField(
+                style: TextStyle(
+                  color: AppColors.title,
+                ),
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Senha',
-                  hintText: 'Sua senha',
-                  labelStyle: TextStyle(color: AppColors.title)),
+                  hintStyle: TextStyle(color: AppColors.title),
+                  labelStyle: TextStyle(color: AppColors.title),
+                ),
+              ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            const ButtonWidget(),
           ],
         ),
       ),

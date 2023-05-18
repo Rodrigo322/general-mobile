@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       title: 'General Question',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.secondary),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
       ),
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,

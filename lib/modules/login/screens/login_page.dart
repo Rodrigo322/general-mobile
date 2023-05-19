@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:general_mobile/modules/login/widgets/button_widget.dart';
 import 'package:general_mobile/modules/login/widgets/switch_text_button_widget.dart';
 import 'package:general_mobile/modules/login/widgets/text_field_widget.dart';
@@ -37,8 +38,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
-                    SwitchTextButton(text: "Entrar", isActive: false),
-                    SwitchTextButton(text: "Registrar", isActive: true),
+                    SwitchTextButton(text: "Entrar", isActive: true),
+                    SwitchTextButton(text: "Registrar", isActive: false),
                   ],
                 ),
               ),
@@ -56,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             ButtonWidget(
               text: "Entrar",
-              onPressed: () {},
+              onPressed: () => Modular.to.navigate("/home"),
             ),
             const SizedBox(
               height: 60,

@@ -12,20 +12,25 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   static const TextStyle optionStyle = TextStyle(color: Color(0xFFffffff));
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      "Page 1",
-      style: optionStyle,
+  static final List<Widget> _widgetOptions = <Widget>[
+    Container(
+      height: 100,
+      width: 200,
+      decoration: const BoxDecoration(color: Colors.amber),
+      child: const Text(
+        "Page 1",
+        style: optionStyle,
+      ),
     ),
-    Text(
+    const Text(
       "Page 2",
       style: optionStyle,
     ),
-    Text(
+    const Text(
       "Page 3",
       style: optionStyle,
     ),
-    Text(
+    const Text(
       "Page 4",
       style: optionStyle,
     ),
@@ -50,12 +55,31 @@ class _HomePageState extends State<HomePage> {
               title: const Text.rich(
                 TextSpan(
                   text: "Olá, ",
+                  style: TextStyle(
+                    color: AppColors.title,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                   children: [
-                    TextSpan(text: "Rodrigo Lucas"),
+                    TextSpan(
+                      text: "Rodrigo Lucas",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ],
                 ),
               ),
-              subtitle: const Text("Pratique todos os dias 20 questões"),
+              subtitle: const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Text(
+                  "Pratique todos os dias 20 questões",
+                  style: TextStyle(
+                    color: AppColors.sutTitle,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
               trailing: SizedBox(
                 width: 48,
                 height: 48,
@@ -77,7 +101,7 @@ class _HomePageState extends State<HomePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFF262629),
+        backgroundColor: const Color(0xFF343141),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -87,21 +111,21 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.question_answer),
             label: "User",
-            backgroundColor: Colors.blue,
+            backgroundColor: AppColors.secondary,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: "User",
-            backgroundColor: Colors.brown,
+            backgroundColor: AppColors.secondary,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: "User",
-            backgroundColor: Colors.purple,
+            backgroundColor: AppColors.secondary,
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.primary,
+        selectedItemColor: AppColors.sutTitle,
         onTap: _onItemTapped,
       ),
     );

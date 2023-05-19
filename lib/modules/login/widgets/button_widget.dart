@@ -15,7 +15,7 @@ class ButtonWidget extends StatelessWidget {
       child: TextButton(
         style: ButtonStyle(
           backgroundColor:
-              const MaterialStatePropertyAll<Color>(AppColors.secondary),
+              const MaterialStatePropertyAll<Color>(AppColors.button),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5), // Define o raio da borda

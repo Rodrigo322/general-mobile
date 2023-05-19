@@ -40,6 +40,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(160),
+        child: Container(
+          height: 160,
+          color: AppColors.secondary,
+          child: Center(
+            child: ListTile(
+              title: const Text.rich(
+                TextSpan(
+                  text: "Olá, ",
+                  children: [
+                    TextSpan(text: "Rodrigo Lucas"),
+                  ],
+                ),
+              ),
+              subtitle: const Text("Pratique todos os dias 20 questões"),
+              trailing: SizedBox(
+                width: 48,
+                height: 48,
+                child: Image.network(
+                  'https://github.com/rodrigo322.png',
+                  loadingBuilder: (context, child, progress) {
+                    return progress == null
+                        ? child
+                        : const CircularProgressIndicator();
+                  },
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       backgroundColor: AppColors.primary,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

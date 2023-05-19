@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:general_mobile/shared/utilities/app_colors.dart';
 
+import '../widgets/app_bar_widget.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -16,7 +18,9 @@ class _HomePageState extends State<HomePage> {
     Container(
       height: 100,
       width: 200,
-      decoration: const BoxDecoration(color: Colors.amber),
+      decoration: const BoxDecoration(
+        color: AppColors.button,
+      ),
       child: const Text(
         "Page 1",
         style: optionStyle,
@@ -45,56 +49,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(160),
-        child: Container(
-          height: 160,
-          color: AppColors.secondary,
-          child: Center(
-            child: ListTile(
-              title: const Text.rich(
-                TextSpan(
-                  text: "Olá, ",
-                  style: TextStyle(
-                    color: AppColors.title,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: "Rodrigo Lucas",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              subtitle: const Padding(
-                padding: EdgeInsets.only(top: 8),
-                child: Text(
-                  "Pratique todos os dias 20 questões",
-                  style: TextStyle(
-                    color: AppColors.sutTitle,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-              trailing: SizedBox(
-                width: 48,
-                height: 48,
-                child: Image.network(
-                  'https://github.com/rodrigo322.png',
-                  loadingBuilder: (context, child, progress) {
-                    return progress == null
-                        ? child
-                        : const CircularProgressIndicator();
-                  },
-                ),
-              ),
-            ),
-          ),
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(160),
+        child: AppBarWidget(),
       ),
       backgroundColor: AppColors.primary,
       body: Center(

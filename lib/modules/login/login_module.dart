@@ -10,6 +10,10 @@ class LoginModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const LoginPage()),
         //inicia o modulo de login
-        ModuleRoute('/home/', module: HomeModule())
+        ModuleRoute(
+          '/home/',
+          module: HomeModule(),
+          transition: TransitionType.leftToRightWithFade,
+        )
       ];
 }

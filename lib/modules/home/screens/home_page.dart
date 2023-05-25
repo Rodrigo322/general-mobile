@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:general_mobile/shared/utilities/app_colors.dart';
 
 import '../widgets/app_bar_widget.dart';
+import '../widgets/card_questions_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,21 +16,8 @@ class _HomePageState extends State<HomePage> {
 
   static const TextStyle optionStyle = TextStyle(color: Color(0xFFffffff));
   static final List<Widget> _widgetOptions = <Widget>[
-    Container(
-      height: 100,
-      width: 200,
-      decoration: const BoxDecoration(
-        color: AppColors.button,
-      ),
-      child: const Text(
-        "Page 1",
-        style: optionStyle,
-      ),
-    ),
-    const Text(
-      "Page 2",
-      style: optionStyle,
-    ),
+    const CardQuestionsWidget(),
+    const CardQuestionsWidget(),
     const Text(
       "Page 3",
       style: optionStyle,
@@ -62,22 +50,22 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home",
+            label: "Inicio",
             backgroundColor: AppColors.secondary,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.question_answer),
-            label: "User",
+            icon: Icon(Icons.work),
+            label: "Jobs",
             backgroundColor: AppColors.secondary,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: "User",
+            label: "Conquistas",
             backgroundColor: AppColors.secondary,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: "User",
+            label: "Config",
             backgroundColor: AppColors.secondary,
           ),
         ],
